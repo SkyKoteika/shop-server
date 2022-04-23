@@ -22,4 +22,4 @@ const getItems = async (req, res) => {
       .then((result) => res.json(result))
       .catch((error) => res.send(error));
   };
-  export default getItems;
+  export default getItems
