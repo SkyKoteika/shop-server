@@ -2,17 +2,14 @@ import dotenv = require("dotenv");
 dotenv.config();
 console.info("dotenv configured")
 
-import { Request, Response } from "express";
 import "reflect-metadata";
 import express = require("express");
-import ShopItem from "./models/ShopItem";
-import { createConnection } from "mysql";
 import { AppDataSource } from "./database";
 import Category from "./models/Category";
-
 import ItemsController from "./api/items";
 import AuthController from "./api/auth";
 import UserController from "./api/user";
+
 const app = express();
 const port = 8000;
 
