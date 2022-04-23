@@ -29,6 +29,7 @@ const salt = "4t897y2er7b8f1342hg890df21";
 process.env.TOKEN_SECRET;
 
 console.log("my newest chang number 2");
+console.log("another important change");
 
 const getHash = (str: string) => {
   const shasum = crypto.createHash("sha256");
