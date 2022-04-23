@@ -1,6 +1,5 @@
-import dotenv = require('dotenv');
+import dotenv = require("dotenv");
 dotenv.config();
-
 
 import { Request, Response } from "express";
 import "reflect-metadata";
@@ -10,7 +9,7 @@ import { createConnection } from "mysql";
 import { AppDataSource } from "./database";
 import Category from "./models/Category";
 import User from "./models/User";
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const app = express();
 const port = 8000;
@@ -27,8 +26,9 @@ app.get("/", (req: Request, res: Response) => {
 const crypto = require("crypto");
 const salt = "4t897y2er7b8f1342hg890df21";
 
-
 process.env.TOKEN_SECRET;
+
+console.log("my newest change");
 
 const getHash = (str: string) => {
   const shasum = crypto.createHash("sha256");
@@ -88,7 +88,7 @@ app.get("/item", async (req, res) => {
   itemRepo
     .createQueryBuilder()
     .select("item")
-    .from(ShopItem ,"item")
+    .from(ShopItem, "item")
     .where("item.id = :itemId", { itemId })
     .getOne()
     .then((result) => res.json(result))
