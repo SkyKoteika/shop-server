@@ -13,7 +13,7 @@ const getItems = async (req, res) => {
         "category",
         "category.id = :categoryId",
         {
-          categoryId: +categoryId,
+          categoryId: categoryId,
         }
       );
   
