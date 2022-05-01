@@ -3,7 +3,7 @@ import { createHash } from "crypto";
 const salt = "4t897y2er7b8f1342hg890df21";
 
 const getHash = (str: string) => {
-  const shasum = createHash("md5");
+  const shasum = createHash("HS256");
 
   const pkg = {
     p: str,

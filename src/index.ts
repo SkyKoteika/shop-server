@@ -2,6 +2,7 @@ import dotenv = require("dotenv");
 dotenv.config();
 console.info("dotenv configured")
 
+
 import "reflect-metadata";
 import express = require("express");
 import { AppDataSource } from "./database";
@@ -10,8 +11,14 @@ import ItemsController from "./api/items";
 import AuthController from "./api/auth";
 import UserController from "./api/user";
 
+AppDataSource.initialize()
+.then(() => {
+    console.log("initialized")
+})
+.catch(error => console.error(error));
+
 const app = express();
-const port = 8000;
+const port = 8080;
 
 app.use(express.static("public"));
 app.use(express.json());

@@ -4,6 +4,7 @@ import hash from "../../core/hash";
 
 export type SignUpPayload = {
     username: string;
+    email: string;
     password: string;
   };
   
@@ -14,6 +15,7 @@ const signUp = (req, res) => {
     const user = new User();
 
     user.username = payload.username;
+    user.email = payload.email;
     user.password = hash(payload.password);
     
     repo.save(user);
