@@ -2,7 +2,7 @@
   "name": "firstapp-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,13 @@
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.25",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-jwt": "^7.4.3",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^10.7.0",
@@ -21,6 +26,8 @@
     "typescript": "^4.6.3"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/mysql": "^2.15.21"
   }
