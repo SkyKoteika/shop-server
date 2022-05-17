@@ -2,7 +2,7 @@ import hash from "../../core/hash";
 import { AppDataSource } from "../../database";
 import User from "../../models/User";
 import { generateTokens } from "../../core/token";
-import { expressjwt as jwt } from "express-jwt";
+
 
 type SignInPayload = {
   username: string;

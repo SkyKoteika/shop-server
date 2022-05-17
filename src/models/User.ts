@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn, Unique } from "typeorm";
 
 @Entity()
+@Unique(["username", "email"])
 class User {
     @PrimaryColumn()
     username: string
@@ -8,9 +9,9 @@ class User {
     password: string
     @PrimaryColumn()
     email: string
-    @Column()
+    @Column({ default: false })
     isVeryfied: boolean
-    @Column()
+    @Column({ default: null })
     imageUrl: string
 }
 

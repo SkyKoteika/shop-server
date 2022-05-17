@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWD,
     database: process.env.DB_NAME,
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [User, Category, ShopItem],
     subscribers: [],
     migrations: [],
