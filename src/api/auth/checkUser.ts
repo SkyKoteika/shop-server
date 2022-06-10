@@ -15,9 +15,18 @@ const checkUser = (req, res) => {
       payload,
       process.env.TOKEN_SECRET as string,
       async (err, decoded) => {
-          repo.findOne({
-              where: {username: decoded.username}
-          }).then(response => res.send({...response, password:undefined}))
+        repo
+          .findOne({
+            where: { username: decoded.username },
+          })
+          .then((response) =>
+            res.send({
+              ...response,
+              password: undefined,
+              email: undefined,
+              isVeryfied: undefined,
+            })
+          );
       }
     );
 };

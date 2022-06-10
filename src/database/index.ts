@@ -1,8 +1,9 @@
 import { DataSource } from "typeorm";
+import dotenv = require('dotenv');
+import User from "../models/User";
 import Category from "../models/Category";
 import ShopItem from "../models/ShopItem";
-import User from "../models/User";
-import dotenv = require('dotenv');
+import SaleSlider from "../models/SaleSlider";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -13,7 +14,7 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     synchronize: true,
     logging: false,
-    entities: [User, Category, ShopItem],
+    entities: [User, Category, ShopItem, SaleSlider],
     subscribers: [],
     migrations: [],
 })

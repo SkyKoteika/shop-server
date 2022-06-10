@@ -10,6 +10,7 @@ import ItemsController from "./api/items";
 import AuthController from "./api/auth";
 import UserController from "./api/user";
 import cors = require("cors");
+import SaleSlider from "./models/SaleSlider";
 
 AppDataSource.initialize()
   .then(() => {
@@ -38,6 +39,11 @@ app.use("/user", UserController);
 
 app.get("/categories", async (req, res) => {
   const result = await AppDataSource.getRepository(Category).find();
+  res.json(result);
+});
+
+app.get("/saledata" , async (req, res) => {
+  const result = await AppDataSource.getRepository(SaleSlider).find();
   res.json(result);
 });
 
