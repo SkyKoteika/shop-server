@@ -21,4 +21,4 @@ const getCartItems = async (req, res) => {
   res.send(result);
 };
 
-export default getCartItems;
+// export default getCartItems;
